@@ -1,15 +1,18 @@
 <div class="container">
-  <h1>Product Name: <%= @product.name %></h1>
-  <br>
-  <p><strong>Country: </strong><%= @product.country %></p>
-  <p><strong>Cost:</strong> $ <%= @product.cost %></p>
-  <br>
-  <h4>Description:</h4>
-  <p><%= @product.description %></p>
+  <div class="well">
+    <h1>Product Name: <%= @product.name %></h1>
+    <br>
+    <p><strong>Country: </strong><%= @product.country %></p>
+    <p><strong>Cost:</strong> $ <%= @product.cost %></p>
+    <br>
+    <h4>Description:</h4>
+    <p><%= @product.description %></p>
 
-  <%= link_to "Edit this Product", edit_product_path(@product) %> | <%= link_to "Delete this Product", product_path(@product),
-                                      :data => { :confirm => "Are you sure you want to remove this product from the system?",
-                                      :method => "delete"} %>
+    <%= link_to "Edit this Product", edit_product_path(@product) %> | <%= link_to "Delete this Product", product_path(@product),
+                                        :data => { :confirm => "Are you sure you want to remove this product from the system?",
+                                        :method => "delete"} %>
+  </div>
+
   <hr>
   <% if @product.reviews.any?%>
     <h3>Reviews</h3>
