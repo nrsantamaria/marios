@@ -7,3 +7,18 @@
 </ul>
 <br>
 <%= link_to "Add a New Product", new_product_path %>
+
+<div class="panel">
+  Check out the Most Talked about Product:
+  <ul>
+    <% @products.mostReviews.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+  These products have recently been added:
+  <ul>
+    <% @products.mostRecent.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+</div>
