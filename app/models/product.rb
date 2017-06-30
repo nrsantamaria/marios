@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  has_many :reviews
+  has_many :reviews, dependent: :delete_all
   validates :name, :presence => true
   validates :cost, :presence => true
   validates :country, :presence => true

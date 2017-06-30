@@ -1,35 +1,38 @@
-<h1>Product Name: <%= @product.name %></h1>
-<br>
-<p><strong>Country: </strong><%= @product.country %></p>
-<p><strong>Cost:</strong> $ <%= @product.cost %></p>
-<br>
-<h4>Description:</h4>
-<p><%= @product.description %></p>
+<div class="container">
+  <h1>Product Name: <%= @product.name %></h1>
+  <br>
+  <p><strong>Country: </strong><%= @product.country %></p>
+  <p><strong>Cost:</strong> $ <%= @product.cost %></p>
+  <br>
+  <h4>Description:</h4>
+  <p><%= @product.description %></p>
 
-<%= link_to "Edit this Product", edit_product_path(@product) %> | <%= link_to "Delete this Product", product_path(@product),
-                                    :data => { :confirm => "Are you sure you want to remove this product from the system?",
-                                    :method => "delete"} %>
-<hr>
-<% if @product.reviews.any?%>
-  <h3>Reviews</h3>
-  <% @product.reviews.each do |review|  %>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <strong>Author:</strong> <%= review.author %> | <strong>Created on:</strong> <%= review.created_at %> | <strong>Updated on:</strong> <%= review.updated_at %>
-    </div>
-    <div class="panel-body">
-      <strong>Rating:</strong> <%= review.rating %>
-      <p><%= review.content_body %></p>
-      <br>
-      <%= link_to "Edit Review", edit_product_review_path(@product, review) %> |
-      <%= link_to "Delete Review", product_review_path(@product, review),
-                                :data => {:confirm => "Are you sure?",
-                                           :method => "delete"} %>
+  <%= link_to "Edit this Product", edit_product_path(@product) %> | <%= link_to "Delete this Product", product_path(@product),
+                                      :data => { :confirm => "Are you sure you want to remove this product from the system?",
+                                      :method => "delete"} %>
+  <hr>
+  <% if @product.reviews.any?%>
+    <h3>Reviews</h3>
+    <% @product.reviews.each do |review|  %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong>Author:</strong> <%= review.author %> | <strong>Created on:</strong> <%= review.created_at %> | <strong>Updated on:</strong> <%= review.updated_at %>
+      </div>
+      <div class="panel-body">
+        <strong>Rating:</strong> <%= review.rating %>
+        <p><%= review.content_body %></p>
+        <br>
+        <%= link_to "Edit Review", edit_product_review_path(@product, review) %> |
+        <%= link_to "Delete Review", product_review_path(@product, review),
+                                  :data => {:confirm => "Are you sure?",
+                                             :method => "delete"} %>
 
+      </div>
     </div>
-  </div>
+    <% end %>
+  <% else %>
+    <p>There are no reviews yet, be the first!</p>
   <% end %>
-<% else %>
-  <p>There are no reviews yet, be the first!</p>
-<% end %>
-<%= link_to "Add a Review", new_product_review_path(@product) %>
+  <%= link_to "Add a Review", new_product_review_path(@product), {class: 'btn btn-default'} %>
+
+</div>

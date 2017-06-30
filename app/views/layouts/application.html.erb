@@ -6,9 +6,53 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Molle:400i|PT+Sans" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to 'Home', products_path, {class: "navbar-brand"} %>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="products#about">About</a></li>
+          <li><a href="products#products">Products</a></li>
+          <li><a href="products#popular">Popular</a></li>
+          <li><a href="products#new">New</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="main">
+      <%= yield %>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+
+          </div>
+          <div class="col-sm-3">
+            <h2>Location:</h2>
+            <p>2340 NE Sandy Boulevard at 24th</p>
+            <p>Portland, OR 97232</p>
+            <p>503-232-1010</p>
+          </div>
+          <div class="col-sm-3">
+            <h2>Hours:</h2>
+            <p>Daily</p>
+            <p>9:30a to 7:00p</p>
+          </div>
+          <div class="col-sm-4">
+
+          </div>
+        </div>
+
+        <div class="row" id="social">
+          <%= image_tag "email.png" %>
+          <%= image_tag "facebook.png" %>
+          <%= image_tag "twitter.png" %>
+          <%= image_tag "instagram.png" %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

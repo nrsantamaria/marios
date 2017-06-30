@@ -1,24 +1,53 @@
-<h1>Products</h1>
+<div class="jumbotron" id="welcome">
+  <div class="container">
+    <a name="welcome"><h1>Welcome</h1></a>
+    <h1>Mario's Speciality Food Products</h1>
+  </div>
+</div>
 
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
-  <% end %>
-</ul>
-<br>
-<%= link_to "Add a New Product", new_product_path %>
+<div class="jumbotron" id="about">
+  <div class="container">
+    <a name="about"><h1>About Marios</h1></a>
+    <p><em>Marios</em> was founded in 1983 on Hawthorne Boulevard in Southeast Portland, and over the years has built a reputation as one of the great European-style markets in the United States.</p>
+    <p><em>Marios</em> is famous for it’s housemade fresh pastas (extruded, sheet and ravioli) using the highest quality Northwest-grown wheat and eggs. Additionally, our in-house kitchen prepares fresh pasta sauces, and an array of delicious prepared foods.</p>
+    <p>But <em>Marios</em> isn't just about pasta. There is also a revered selection of Mediterranean wines (with a strong focus on Italian), cheese cases unparalleled in the Northwest, and extraordinary food products sourced locally, regionally, nationally and internationally.</p>
+  </div>
+</div>
 
-<div class="panel">
-  Check out the Most Talked about Product:
-  <ul>
-    <% @products.mostReviews.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
-  These products have recently been added:
-  <ul>
-    <% @products.mostRecent.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
+<div class="jumbotron" id="scopes">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6" id="popular">
+      <a name="popular"><h2>Check out the Most Talked about Product:</h2></a>
+        <ul>
+          <% @products.mostReviews.each do |product| %>
+            <li><%= link_to product.name, product_path(product) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-sm-6" id="new">
+        <a name="new"><h2>These products have recently been added:</h2></a>
+        <ul>
+          <% @products.mostRecent.each do |product| %>
+            <li><%= link_to product.name, product_path(product) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron" id="products">
+  <div class="container">
+    <a name="products"><h1>Products</h1></a>
+    <%= image_tag "wine.jpg", {id: 'wine'} %>
+    <ul>
+      <% @products.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end %>
+    </ul>
+    <br>
+    <%= link_to "Add a New Product", new_product_path, {class: 'btn btn-default'}%>
+
+  </div>
 </div>

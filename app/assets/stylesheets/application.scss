@@ -1,2 +1,82 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  border-color: white;
+  a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+}
+
+/* Main content */
+.main {
+  margin-top: 50px; /* Add a top margin to avoid content overlay */
+}
+
+body {
+  background-color: #949398;
+  font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Molle', cursive;
+}
+
+#welcome {
+  background-image: url(cheese.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.75;
+  height: 400px;
+  text-align: center;
+  color: white;
+  background-color: #949398;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+#scopes {
+  background-image: url(tortelli.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.80;
+  background-color: #949398;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+.btn-default, .btn-success {
+  background-color: black;
+  border: black;
+}
+.jumbotron {
+  background-color: #353b3f;
+  color: #949398;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+#wine {
+  float: right;
+  border-radius: 30px;
+}
+
+#social {
+  display: block;
+  margin-left: 40%;
+}
