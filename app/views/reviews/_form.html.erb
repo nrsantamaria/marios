@@ -1,0 +1,13 @@
+<%= render('layouts/errors', :object => @review) %>
+
+<%= form_for [@product, @review] do |f| %>
+  <%= f.label :author, {class: "form-group"}  %>
+  <%= f.text_field :author, {class: "form-control"} %>
+  <%= f.label :review, {class: "form-group"}  %>
+  <%= f.text_area :content_body, {class: "form-control"} %>
+  <br>
+  <%= f.label :rating, {class: "form-group"}  %>
+  <%= f.number_field :rating, in: 1..5, step: 1%>
+<br>
+<p><%= f.submit nil, {class: "btn btn-success"} %></p>
+<% end %>

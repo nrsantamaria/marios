@@ -248,6 +248,8 @@
   [ 'Zambia',  'Zambia'],
   [ 'Zimbabwe',  'Zimbabwe']
 ]), {}, {class: "form-control"} %>
+<%= f.label :description, {class: "form-group"}  %>
+<%= f.text_area :description, {class: "form-control"} %>
 <br>
 <p><%= f.submit nil, {class: "btn btn-success"} %></p>
 <% end %>
