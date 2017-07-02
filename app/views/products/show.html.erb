@@ -12,27 +12,27 @@
                                         :data => { :confirm => "Are you sure you want to remove this product from the system?",
                                         :method => "delete"} %>
   </div>
-
   <hr>
   <% if @product.reviews.any?%>
     <h3>Reviews</h3>
     <% @product.reviews.each do |review|  %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <strong>Author:</strong> <%= review.author %> | <strong>Created on:</strong> <%= review.created_at %> | <strong>Updated on:</strong> <%= review.updated_at %>
-      </div>
-      <div class="panel-body">
-        <strong>Rating:</strong> <%= review.rating %>
-        <p><%= review.content_body %></p>
-        <br>
-        <%= link_to "Edit Review", edit_product_review_path(@product, review) %> |
-        <%= link_to "Delete Review", product_review_path(@product, review),
-                                  :data => {:confirm => "Are you sure?",
-                                             :method => "delete"} %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>Author:</strong> <%= review.author %> | <strong>Created on:</strong> <%= review.created_at %> | <strong>Updated on:</strong> <%= review.updated_at %>
+        </div>
 
+        <div class="panel-body">
+          <strong>Rating:</strong> <%= review.rating %>
+          <p><%= review.content_body %></p>
+          <br>
+          <%= link_to "Edit Review", edit_product_review_path(@product, review) %> |
+          <%= link_to "Delete Review", product_review_path(@product, review),
+          :data => {:confirm => "Are you sure?",
+            :method => "delete"} %>
+        </div>
       </div>
-    </div>
     <% end %>
+
   <% else %>
     <p>There are no reviews yet, be the first!</p>
   <% end %>

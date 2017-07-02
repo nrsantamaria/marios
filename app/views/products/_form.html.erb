@@ -1,11 +1,11 @@
 <%= render('layouts/errors', :object => @product) %>
 
 <%= form_for @product do |f| %>
-  <%= f.label :product_name, {class: "form-group"}  %>
+  <%= f.label :product_name, {class: "form-group"}, id: 'Name' %>
   <%= f.text_field :name, {class: "form-control"} %>
-  <%= f.label :cost, {class: "form-group"}  %>
+  <%= f.label :cost, {class: "form-group"}, id: 'Cost'  %>
   <%= f.number_field :cost, {class: "form-control"} %>
-  <%= f.label :country, {class: "form-group"} %>
+  <%= f.label :country, {class: "form-group"}, id: 'Country' %>
   <%= f.select :country, options_for_select([
   [ 'Afghanistan',  'Afghanistan'],
   [ 'Aland Islands',  'Aland Islands'],

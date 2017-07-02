@@ -39,15 +39,25 @@
 
 <div class="jumbotron" id="products">
   <div class="container">
-    <a name="products"><h1>Products</h1></a>
-    <%= image_tag "wine.jpg", {id: 'wine'} %>
-    <ul>
-      <% @products.each do |product| %>
-        <li><%= link_to product.name, product_path(product) %></li>
-      <% end %>
-    </ul>
-    <br>
-    <%= link_to "Add a New Product", new_product_path, {class: 'btn btn-default'}%>
-
+    <div class="row">
+      <div class="col-sm-6" id="products">
+        <a name="products"><h1>Products</h1></a>
+        <ul>
+          <% @products.each do |product| %>
+            <li><%= link_to product.name, product_path(product) %></li>
+          <% end %>
+        </ul>
+        <br>
+        <%= link_to "Add a New Product", new_product_path, {class: 'btn btn-default'}%>
+      </div>
+      <div class="col-sm-6" id="local">
+        <h1>Local Products</h1>
+        <ul>
+          <% @products.localProducts.each do |product| %>
+            <li><%= link_to product.name, product_path(product) %></li>
+          <% end %>
+        </ul>
+        <%= image_tag "wine.jpg", {id: 'wine'} %>
+      </div>
   </div>
 </div>
