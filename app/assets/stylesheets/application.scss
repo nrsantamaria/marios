@@ -4,6 +4,7 @@
 /* The navigation bar */
 .navbar {
   overflow: hidden;
+  z-index: 5;
   position: fixed;
   top: 0;
   width: 100%;
