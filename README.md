@@ -53,7 +53,7 @@ Run `rails s` for a dev server. Navigate to `http://localhost:3000/`. The app wi
 *This software is licensed under MIT license.*
 
 ```
-Copyright (c) 2017 **Nicky Santamaria**
+Copyright (c) 2017 *Nicky Santamaria*
 ```
 
 ![Home page](app/assets/images/home.png)
