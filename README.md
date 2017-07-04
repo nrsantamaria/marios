@@ -6,6 +6,8 @@
 
 An app to showcase products from Marios. Products and reviews of products can be added.
 
+Heroku page: https://stunning-lassen-volcanic-17669.herokuapp.com/
+
 ## Technologies used / Prerequisites
 
 * [Ruby](https://www.ruby-lang.org/en/downloads/)
